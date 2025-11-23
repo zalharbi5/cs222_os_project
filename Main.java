@@ -3,7 +3,7 @@ public class Main {
     public static void main(String[] args) {
         Buffer buf = new Buffer();
 	// Why are we using the keyword (new)?
-        // Because in java OOP, all objects must be dynamically allocted. (Thread producer1; ==> ILLEGAL EXPRESSION!!!)
+        // Because in java OOP, all objects must be dynamically allocted (Thread producer1; ==> ILLEGAL EXPRESSION!!!).
         // Also, dynamically allocated objects will be deleted automatically. No neeed for (delete) keyword like in C++.
 
 	// Set of Producers

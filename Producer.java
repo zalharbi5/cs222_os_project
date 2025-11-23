@@ -9,7 +9,7 @@ class Producer implements Runnable { // implements Runnable == There's a run() m
         while(true)  {
             try {
                 producerBuf.put("Print Job");
-                Thread.sleep(500);
+                Thread.sleep(500); // 500ms = 1/2 second
 
             } catch (InterruptedException e) { System.out.println(Thread.currentThread().getName() + " Interrupted "); }
         }

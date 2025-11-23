@@ -10,7 +10,7 @@ class Consumer implements Runnable { // implements Runnable == There's a run() m
             try {
                 consumerBuf.get();
 
-                Thread.sleep(1000);
+                Thread.sleep(1000); // 1000ms = 1 second
             } catch (InterruptedException e) { System.out.println(Thread.currentThread().getName() + " Interrupted "); }
         }
     }

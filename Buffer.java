@@ -26,9 +26,10 @@ class Buffer {
 
     public void put(String item) {
         try {
-            empty.acquire(); // Check if there's an empty slot in the buffer, if not then wait
+            empty.acquire(); // Check if there's an empty slot in the buffer, if not -if empty is zero- then wait
             mutex.acquire(); // Check if the access key is available, if not then wait
 	    // In addition to checking, acquire() decrements the semaphore -if it's not zero- by 1.
+	    // If the semaphore value is zero, the thread will enter a waiting state.
 
             item = item + " " + jobCounter;
 
@@ -50,9 +51,10 @@ class Buffer {
 
     public void get() {
         try {
-            full.acquire(); // Check if there's an occupied slot in the buffer, if not then wait.
+            full.acquire(); // Check if there's an occupied slot in the buffer, if not -if full is zero- then wait.
             mutex.acquire(); // Check if the access key is available, if not then wait.
 	    // In addition to checking, acquire() decrements the semaphore -if it's not zero- by 1.
+	    // If the semaphore value is zero, the thread will enter a waiting state.
 
             String item = buffer[out];
 
