@@ -1,12 +1,12 @@
-# 1. Ignore EVERYTHING
+# 1. Ignore everything
 *
 
-# 2. Look inside all folders
+# 2. Except directories (folders)
 !*/
 
-# 3. Allow Java files
+# 3. Exept Java files
 !*.java
 
-# 4. Allow the .gitignore file itself so you don't lose it
+# 4. Except .gitignore file
 !.gitignore
 
